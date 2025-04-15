@@ -26,17 +26,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Acesso"
+                "$ref": "#/components/schemas/AcessoRegistrarRequest"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Acesso"
+                "$ref": "#/components/schemas/AcessoRegistrarRequest"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Acesso"
+                "$ref": "#/components/schemas/AcessoRegistrarRequest"
               }
             }
           }
@@ -116,6 +116,25 @@
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResetarSenhaRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResetarSenhaRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResetarSenhaRequest"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "Success"
@@ -365,13 +384,9 @@
   },
   "components": {
     "schemas": {
-      "Acesso": {
+      "AcessoRegistrarRequest": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
           "idUsuario": {
             "type": "integer",
             "format": "int32"
@@ -421,6 +436,16 @@
             "nullable": true
           },
           "senha": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResetarSenhaRequest": {
+        "type": "object",
+        "properties": {
+          "novaSenha": {
             "type": "string",
             "nullable": true
           }

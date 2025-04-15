@@ -41,7 +41,7 @@ namespace api_acesso_ia.Repositories
 
         public async Task<bool> Deletar(int id)
         {
-           var dado= await _context.Usuarios.FindAsync(id);
+           var dado = await _context.Usuarios.FindAsync(id);
             if (dado == null) return false;
             _context.Usuarios.Remove(dado);
             await _context.SaveChangesAsync();

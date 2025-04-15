@@ -100,3 +100,11 @@ C:\Users\bernardo.silva\Documents\Projetos\Backend\api-acesso-ia\api-acesso-ia\o
 C:\Users\bernardo.silva\Documents\Projetos\Backend\api-acesso-ia\api-acesso-ia\obj\Debug\net6.0\staticwebassets\msbuild.api-acesso-ia.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 C:\Users\bernardo.silva\Documents\Projetos\Backend\api-acesso-ia\api-acesso-ia\obj\Debug\net6.0\staticwebassets.upToDateCheck.txt
 C:\Users\bernardo.silva\Documents\Projetos\Backend\api-acesso-ia\api-acesso-ia\obj\Debug\net6.0\api-aces.E1528F6C.Up2Date
+C:\Users\bernardo.silva\Documents\Projetos\Backend\api-acesso-ia\api-acesso-ia\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+C:\Users\bernardo.silva\Documents\Projetos\Backend\api-acesso-ia\api-acesso-ia\bin\Debug\net6.0\MailKit.dll
+C:\Users\bernardo.silva\Documents\Projetos\Backend\api-acesso-ia\api-acesso-ia\bin\Debug\net6.0\MimeKit.dll
+C:\Users\bernardo.silva\Documents\Projetos\Backend\api-acesso-ia\api-acesso-ia\bin\Debug\net6.0\System.Formats.Asn1.dll
+C:\Users\bernardo.silva\Documents\Projetos\Backend\api-acesso-ia\api-acesso-ia\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\bernardo.silva\Documents\Projetos\Backend\api-acesso-ia\api-acesso-ia\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
+C:\Users\bernardo.silva\Documents\Projetos\Backend\api-acesso-ia\api-acesso-ia\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\bernardo.silva\Documents\Projetos\Backend\api-acesso-ia\api-acesso-ia\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll

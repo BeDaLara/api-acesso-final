@@ -1,6 +1,8 @@
 ﻿using api_acesso_ia.Models;
 using api_acesso_ia.Repositories.Interfaces;
 using api_acesso_ia.Services.Interfaces;
+using MailKit.Security;
+using MimeKit;
 
 namespace api_acesso_ia.Services
 {
@@ -25,8 +27,16 @@ namespace api_acesso_ia.Services
 
         public async Task<Usuario> CriarService(Usuario dados)
         {
-            return await _usuarioRepository.Criar(dados);
+            var usuarioCriado = await _usuarioRepository.Criar(dados);
+
+            var assunto = "Bem-vindo ao nosso sistema!";
+            var mensagem = $"Bem vindo, {usuarioCriado.Nome}! Seu cadastro foi criado com sucesso!";
+
+            await EnviarEmailAsync(usuarioCriado.Email, assunto, mensagem);
+
+            return usuarioCriado;
         }
+
 
         public async Task<bool> AtualizarService(Usuario dados)
         {
@@ -46,6 +56,30 @@ namespace api_acesso_ia.Services
                 return true;
             }
             return false;
+        }
+        public async Task<bool> EnviarEmailAsync(string destinatario, string assunto, string mensagem)
+        {
+            var email = new MimeMessage();
+            email.From.Add(new MailboxAddress("Meu sistema", "bernardosilvacorlaite2406@gmail.com"));
+            email.To.Add(MailboxAddress.Parse(destinatario));
+            email.Subject = assunto;
+
+            email.Body = new TextPart("plain") { Text = mensagem };
+
+            using var smtp = new MailKit.Net.Smtp.SmtpClient();
+            try
+            {
+                await smtp.ConnectAsync("smtp.gmail.com", 587, SecureSocketOptions.StartTls);
+                await smtp.AuthenticateAsync("bernardosilvacorlaite2406@gmail.com", "zejq bwqi smtl zyqj");
+                await smtp.SendAsync(email);
+                await smtp.DisconnectAsync(true);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao enviar email: {ex.Message}");
+                return false;
+            }
         }
     }
 }

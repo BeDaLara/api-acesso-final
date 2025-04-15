@@ -21,5 +21,7 @@ namespace api_acesso_ia.Services.Interfaces
 
         Task<bool> CpfJaCadastrado(string cpf);
 
+        Task<bool> EnviarEmailAsync(string destinatario, string assunto, string mensagem);
+
     }
 }

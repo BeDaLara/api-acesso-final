@@ -26,9 +26,11 @@ namespace api_acesso_ia.Repositories
                 .ToListAsync();
         }
 
-        public async Task<bool> Registrar(Acesso acesso)
+        public async Task<bool> Registrar(int IdUsuario, DateTime DataHoraAcesso)
         {
-            _context.Acessos.Add(acesso);
+            Acesso item = new Acesso { IdUsuario = IdUsuario, DataHoraAcesso = DataHoraAcesso };
+
+            _context.Acessos.Add(item);
             return await _context.SaveChangesAsync() > 0;
         }
     }

@@ -1,4 +1,5 @@
 ﻿using api_acesso_ia.Models;
+using api_acesso_ia.Requests;
 using api_acesso_ia.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -24,9 +25,9 @@ namespace api_acesso_ia.Controllers
         }
 
         [HttpPost("registrar")]
-        public async Task<IActionResult> Registrar([FromBody] Acesso dados)
+        public async Task<IActionResult> Registrar([FromBody] AcessoRegistrarRequest dados)
         {
-            var resultado = await _acessoService.Registrar(dados);
+            var resultado = await _acessoService.Registrar(dados.IdUsuario,dados.DataHoraAcesso);
             if (!resultado)
                 return BadRequest("Erro ao registrar acesso");
 

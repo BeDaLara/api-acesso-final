@@ -47,6 +47,17 @@ namespace api_acesso_ia.Repositories
         {
             return await _context.Login.AnyAsync(u => u.Cpf == cpf);
         }
+        public async Task<bool> ResetarSenha(Login dados)
+        {
+            var usuarioExists = await _context.Login.FindAsync(dados.Id);
+            if (usuarioExists == null)
+            {
+                return false;
+            }
+            _context.Entry(usuarioExists).CurrentValues.SetValues(dados.Senha);
+            await _context.SaveChangesAsync();
+            return true;
+        }
     }
 }
 

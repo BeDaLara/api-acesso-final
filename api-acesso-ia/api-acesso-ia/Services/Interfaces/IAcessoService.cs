@@ -1,4 +1,5 @@
 ﻿using api_acesso_ia.Models;
+using api_acesso_ia.Requests;
 
 namespace api_acesso_ia.Services.Interfaces
 {
@@ -7,6 +8,6 @@ namespace api_acesso_ia.Services.Interfaces
 
         //Listar o Historico
         Task<IEnumerable<AcessoResponse>> ListarTodos();
-        Task<bool> Registrar(Acesso acesso);
+        Task<bool> Registrar(int IdUsuario , DateTime DataHoraAcesso);
     }
 }

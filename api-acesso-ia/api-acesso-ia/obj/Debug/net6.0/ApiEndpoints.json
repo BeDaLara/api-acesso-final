@@ -69,6 +69,11 @@
         "Name": "idUsuario",
         "Type": "System.Int32",
         "IsRequired": true
+      },
+      {
+        "Name": "dados",
+        "Type": "api_acesso_ia.Requests.ResetarSenhaRequest",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -93,7 +98,7 @@
     "Parameters": [
       {
         "Name": "dados",
-        "Type": "api_acesso_ia.Models.Acesso",
+        "Type": "api_acesso_ia.Requests.AcessoRegistrarRequest",
         "IsRequired": true
       }
     ],
