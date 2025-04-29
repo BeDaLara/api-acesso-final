@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "FmqVGEjn2kD8+5zdzbEkb9UQuSuV1LxGokCcMKeApeU=",
+  "Source": "api-acesso-ia",
+  "BasePath": "_content/api-acesso-ia",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
